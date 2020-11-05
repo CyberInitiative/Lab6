@@ -86,7 +86,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#sortFuncIntGainAsc" text="Int gain asc" />
                     </items>
                   </MenuButton>
-                  <TextField fx:id="textField" layoutX="444.0" layoutY="106.0" onKeyTyped="#filterFunc" prefHeight="26.0" prefWidth="143.0" AnchorPane.rightAnchor="11.199999999999989" AnchorPane.topAnchor="106.0" />
+                  <TextField fx:id="textField" layoutX="444.0" layoutY="106.0" onAction="#filterFunc" prefHeight="26.0" prefWidth="143.0" AnchorPane.rightAnchor="11.199999999999989" AnchorPane.topAnchor="106.0" />
                   <Label layoutX="444.0" layoutY="80.0" text="Localized name filter" AnchorPane.rightAnchor="44.79999999999998" AnchorPane.topAnchor="80.0" />
                     </children>
                 </AnchorPane>

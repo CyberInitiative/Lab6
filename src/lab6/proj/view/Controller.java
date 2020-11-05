@@ -191,7 +191,7 @@ public class Controller {
         heroNullWinCol.setCellValueFactory(new PropertyValueFactory<>("nullWin"));
     }
 
-    public void filterFunc(KeyEvent event) throws IOException {
+    public void filterFunc() throws IOException {
 
         FilteredList<HeroesModel> filteredList = new FilteredList<>(listHeroes, p -> true);
         if (filteredList.isEmpty())
