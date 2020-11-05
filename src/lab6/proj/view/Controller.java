@@ -14,8 +14,6 @@ import lab6.proj.Main;
 import lab6.proj.model.HeroesModel;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -128,8 +126,6 @@ public class Controller {
     private TableColumn<HeroesModel, Integer> heroNullWinCol;
     @FXML
     private TextField textField;
-    @FXML
-    private Text text;
 
     private Main main;
 
