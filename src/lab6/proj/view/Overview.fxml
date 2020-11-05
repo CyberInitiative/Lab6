@@ -7,7 +7,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab6.proj.view.Controller">
     <children>
@@ -28,7 +31,7 @@
                                 <TableColumn fx:id="heroBaseHealthCol" prefWidth="75.0" text="Base Health" />
                                 <TableColumn fx:id="heroBaseHealthRegCol" prefWidth="120.0" text="Base health Regen" />
                                 <TableColumn fx:id="heroBaseManaCol" prefWidth="75.0" text="Base mana" />
-                                <TableColumn fx:id="heroBaseManaRegCol" prefWidth="75.0" text="Base mana regen" />
+                                <TableColumn fx:id="heroBaseManaRegCol" prefWidth="120.0" text="Base mana regen" />
                                 <TableColumn fx:id="heroBaseArmorCol" prefWidth="75.0" text="Base armor" />
                                 <TableColumn fx:id="heroBaseMrCol" prefWidth="75.0" text="Base mr" />
                                 <TableColumn fx:id="heroBaseAttMinCol" prefWidth="120" text="Base min attack" />
@@ -39,8 +42,8 @@
                                 <TableColumn fx:id="heroStrGainCol" prefWidth="100.0" text="Straight gain" />
                                 <TableColumn fx:id="heroAgiGainCol" prefWidth="100.0" text="Agility gain" />
                                 <TableColumn fx:id="heroIntGainCol" prefWidth="100.0" text="Intelligence gain" />
-                                <TableColumn fx:id="heroAttRangeCol" prefWidth="75.0" text="Attack range" />
-                                <TableColumn fx:id="heroProjectileSpeedCol" prefWidth="75.0" text="Projectile speed" />
+                                <TableColumn fx:id="heroAttRangeCol" prefWidth="100.0" text="Attack range" />
+                                <TableColumn fx:id="heroProjectileSpeedCol" prefWidth="110.0" text="Projectile speed" />
                                 <TableColumn fx:id="heroAttRateCol" prefWidth="75.0" text="Attack rate" />
                                 <TableColumn fx:id="heroMoveSpeedCol" prefWidth="75.0" text="Move speed" />
                                 <TableColumn fx:id="heroTurnRateCol" prefWidth="75.0" text="Turn rate" />
@@ -74,7 +77,7 @@
                                 <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                  <MenuButton layoutX="444.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" text="Sort list" AnchorPane.rightAnchor="11.199999999999989" AnchorPane.topAnchor="14.0">
+                  <MenuButton layoutX="464.0" layoutY="114.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Sort list" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="114.0">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#sortFuncArmorDesc" text="Armor sort desc" />
                       <MenuItem mnemonicParsing="false" onAction="#sortFuncArmorAsc" text="Armor sort asc" />
@@ -85,9 +88,20 @@
                         <MenuItem mnemonicParsing="false" onAction="#sortFuncIntGainDesc" text="Int gain desc" />
                         <MenuItem mnemonicParsing="false" onAction="#sortFuncIntGainAsc" text="Int gain asc" />
                     </items>
+                     <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                     </font>
                   </MenuButton>
-                  <TextField fx:id="textField" layoutX="444.0" layoutY="106.0" onAction="#filterFunc" onMouseClicked="#filterFunc" prefHeight="26.0" prefWidth="143.0" AnchorPane.rightAnchor="11.199999999999989" AnchorPane.topAnchor="106.0" />
-                  <Label layoutX="444.0" layoutY="80.0" text="Localized name filter" AnchorPane.rightAnchor="44.79999999999998" AnchorPane.topAnchor="80.0" />
+                  <TextField fx:id="textField" layoutX="443.0" layoutY="188.0" onAction="#filterFunc" onMouseClicked="#filterFunc" prefHeight="26.0" prefWidth="143.0" AnchorPane.rightAnchor="12.199999999999932" AnchorPane.topAnchor="188.0" />
+                  <Label layoutX="445.0" layoutY="166.0" text="Localized name filter" AnchorPane.rightAnchor="14.199999999999932" AnchorPane.topAnchor="166.0">
+                     <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                     </font></Label>
+                  <ImageView fitHeight="97.0" fitWidth="78.0" layoutX="476.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="44.39999999999998" AnchorPane.topAnchor="14.0">
+                     <image>
+                        <Image url="@dota-2-logo.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </AnchorPane>
             </items>
