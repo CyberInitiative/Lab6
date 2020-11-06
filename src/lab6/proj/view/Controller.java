@@ -133,7 +133,7 @@ public class Controller {
     }
 
     @FXML
-    private void initialize() throws IOException {
+    private void initialize()  {
         heroIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         heroNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         heroLocNameCol.setCellValueFactory(new PropertyValueFactory<>("localizedName"));
@@ -185,31 +185,6 @@ public class Controller {
         hero8WinCol.setCellValueFactory(new PropertyValueFactory<>("8Win"));
         heroNullPickCol.setCellValueFactory(new PropertyValueFactory<>("nullPick"));
         heroNullWinCol.setCellValueFactory(new PropertyValueFactory<>("nullWin"));
-    }
-
-    public void filterFunc() throws IOException {
-
-        FilteredList<HeroesModel> filteredList = new FilteredList<>(listHeroes, p -> true);
-        if (filteredList.isEmpty())
-            dataLoad();
-
-        textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredList.setPredicate(heroesModel -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (heroesModel.getLocalizedName().toLowerCase().contains(lowerCaseFilter)) {
-                    return true;
-                }
-                return false;
-            });
-        });
-        SortedList<HeroesModel> sortedList = new SortedList<>(filteredList);
-        sortedList.comparatorProperty().bind(table.comparatorProperty());
-
-        table.setItems(sortedList);
-
     }
 
     private JSONModel jsonModel = new JSONModel();
@@ -290,6 +265,38 @@ public class Controller {
         dataLoad();
         listHeroes.sort(HeroesModel.byIntGainAsc);
         table.setItems(listHeroes);
+    }
+
+    @FXML
+    private void reload() throws IOException {
+        listHeroes.clear();
+        dataLoad();
+    }
+
+    @FXML
+    public void filterFunc() throws IOException {
+
+        FilteredList<HeroesModel> filteredList = new FilteredList<>(listHeroes, p -> true);
+        if (filteredList.isEmpty())
+            dataLoad();
+
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(heroesModel -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (heroesModel.getLocalizedName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+        SortedList<HeroesModel> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(table.comparatorProperty());
+
+        table.setItems(sortedList);
+
     }
 
 
